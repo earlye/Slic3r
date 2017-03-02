@@ -355,6 +355,16 @@ PrintConfigDef::PrintConfigDef()
     def->max = 359;
     def->default_value = new ConfigOptionFloat(45);
 
+    def = this->add("fill_rotation_rate", coFloats);
+    def->label = "Fill rotation rate";
+    def->category = "Infill";
+    def->tooltip = "Amount to change the fill angle at each layer, in degrees";
+    def->sidetext = "°";
+    def->cli = "fill-rotation-rate=f@";
+    def->min = 0;
+    def->max = 359;
+    def->default_value = new ConfigOptionFloat(0);
+    
     def = this->add("fill_density", coPercent);
     def->gui_type = "f_enum_open";
     def->gui_flags = "show_value";

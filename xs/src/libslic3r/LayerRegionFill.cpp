@@ -232,6 +232,8 @@ LayerRegion::make_fill()
         f->layer_id = this->layer()->id();
         f->z        = this->layer()->print_z;
         f->angle    = Geometry::deg2rad(this->region()->config.fill_angle.value);
+	f->angle    += Geometry::deg2rad(f->layer_id * this->region()->config.fill_rotation_rate.value);
+	// std::cout << "f->angle:" << f->angle << " f->z:" << f->z << " f->layer_id:" << f->layer_id << std::endl;
         
         // Maximum length of the perimeter segment linking two infill lines.
         f->link_max_length = (!is_bridge && density > 80)

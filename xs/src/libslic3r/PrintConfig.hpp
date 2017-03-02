@@ -210,6 +210,7 @@ class PrintRegionConfig : public virtual StaticPrintConfig
     ConfigOptionBool                external_perimeters_first;
     ConfigOptionBool                extra_perimeters;
     ConfigOptionFloat               fill_angle;
+    ConfigOptionFloat               fill_rotation_rate;
     ConfigOptionPercent             fill_density;
     ConfigOptionEnum<InfillPattern> fill_pattern;
     ConfigOptionFloat               gap_fill_speed;
@@ -249,6 +250,7 @@ class PrintRegionConfig : public virtual StaticPrintConfig
         OPT_PTR(external_perimeters_first);
         OPT_PTR(extra_perimeters);
         OPT_PTR(fill_angle);
+        OPT_PTR(fill_rotation_rate);
         OPT_PTR(fill_density);
         OPT_PTR(fill_pattern);
         OPT_PTR(gap_fill_speed);
@@ -535,6 +537,7 @@ class SLAPrintConfig
 {
     public:
     ConfigOptionFloat               fill_angle;
+    ConfigOptionFloat               fill_rotation_rate;
     ConfigOptionPercent             fill_density;
     ConfigOptionEnum<InfillPattern> fill_pattern;
     ConfigOptionFloatOrPercent      first_layer_height;
@@ -562,6 +565,7 @@ class SLAPrintConfig
     
     virtual ConfigOption* optptr(const t_config_option_key &opt_key, bool create = false) {
         OPT_PTR(fill_angle);
+        OPT_PTR(fill_rotation_rate);
         OPT_PTR(fill_density);
         OPT_PTR(fill_pattern);
         OPT_PTR(first_layer_height);

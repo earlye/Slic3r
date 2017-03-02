@@ -270,6 +270,7 @@ PrintObject::invalidate_state_by_config_options(const std::vector<t_config_optio
             steps.insert(posPrepareInfill);
         } else if (*opt_key == "external_fill_pattern"
             || *opt_key == "fill_angle"
+            || *opt_key == "fill_rotation_rate"
             || *opt_key == "fill_pattern"
             || *opt_key == "top_infill_extrusion_width"
             || *opt_key == "first_layer_extrusion_width"
